@@ -1,0 +1,36 @@
+{
+  "name": "random-quote-machine",
+  "version": "1.0.0",
+  "description": "Front End Development Certification (FreeCodeCamp) - Exam 1/5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamai6/random-quote-machine.git"
+  },
+  "author": "lamai6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamai6/random-quote-machine/issues"
+  },
+  "homepage": "https://github.com/lamai6/random-quote-machine#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
