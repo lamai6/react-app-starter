@@ -1,0 +1,19 @@
+$text-color: #333852;
+
+#counter {
+    color: $text-color;
+    font-family: 'Helvetica';
+
+    h3 {
+        text-align: center;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin: 0 1em;
+        }
+    }
+}

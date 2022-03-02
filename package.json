@@ -2,9 +2,11 @@
   "name": "random-quote-machine",
   "version": "1.0.0",
   "description": "Front End Development Certification (FreeCodeCamp) - Exam 1/5",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/lamai6/random-quote-machine#readme",
   "dependencies": {
+    "@babel/cli": "^7.17.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
