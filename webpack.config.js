@@ -5,11 +5,13 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 module.exports = {
     mode: isDevelopment ? 'development' : 'production',
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         filename: 'app.bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true
+        path: path.resolve(__dirname, 'dist')
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -41,10 +43,10 @@ module.exports = {
         ]
     },
     plugins: [
+        isDevelopment && new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: 'src/template.html'
-        }),
-        isDevelopment && new ReactRefreshWebpackPlugin()
+        })
     ].filter(Boolean),
     devServer: {
         static: './dist',

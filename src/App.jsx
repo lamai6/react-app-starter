@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './styles.scss';
 
 class App extends React.Component {
@@ -22,7 +21,7 @@ class App extends React.Component {
     }
 
     reset() {
-        this.setState(state => ({count: 0}))
+        this.setState(() => ({count: 0}))
     }
 
     render() {
@@ -30,6 +29,7 @@ class App extends React.Component {
             <div id="counter">
                 <h3>Counter : {this.state.count}</h3>
                 <div>
+
                     <button type='button' onClick={this.increment}>Increment</button>
                     <button type='button' onClick={this.decrement}>Decrement</button>
                     <button type='button' onClick={this.reset}>Reset</button>
@@ -39,4 +39,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
