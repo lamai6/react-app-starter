@@ -1,4 +1,9 @@
-$text-color: #333852;
+$text-color: white;
+$background : url('assets/images/odaiba-night.jpg');
+
+body {
+    background-image: $background;
+}
 
 #counter {
     color: $text-color;
