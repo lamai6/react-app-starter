@@ -1,13 +1,21 @@
 $text-color: white;
-$background : url('assets/images/odaiba-night.jpg');
+$image_url : url('assets/images/odaiba-night.jpg');
+$font_url : url('assets/fonts/roboto-regular.ttf');
+
+@font-face {
+    font-family: 'Roboto';
+    src: $font_url format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 body {
-    background-image: $background;
+    background-image: $image_url;
+    font-family: 'Roboto', sans-serif;
 }
 
 #counter {
     color: $text-color;
-    font-family: 'Helvetica';
 
     h3 {
         text-align: center;
