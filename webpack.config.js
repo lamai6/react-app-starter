@@ -52,7 +52,20 @@ module.exports = {
     plugins: [
         isDevelopment && new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: 'src/template.html'
+            title: 'React App',
+            inject: false,
+            templateContent: ({htmlWebpackPlugin}) => `
+                <html>
+                    <head>
+                        <title>${htmlWebpackPlugin.options.title}</title>
+                        ${htmlWebpackPlugin.tags.headTags}
+                    </head>
+                    <body>
+                        <div id='app'></div>
+                        ${htmlWebpackPlugin.tags.bodyTags}
+                    </body>
+                </html>
+            `
         })
     ].filter(Boolean),
     devServer: {
