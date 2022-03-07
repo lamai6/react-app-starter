@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './App.styles.scss';
 
 class App extends React.Component {
     constructor(props) {
@@ -29,7 +29,6 @@ class App extends React.Component {
             <div id="counter">
                 <h3>Counter : {this.state.count}</h3>
                 <div>
-
                     <button type='button' onClick={this.increment}>Increment</button>
                     <button type='button' onClick={this.decrement}>Decrement</button>
                     <button type='button' onClick={this.reset}>Reset</button>

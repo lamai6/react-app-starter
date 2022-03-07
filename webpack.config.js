@@ -11,7 +11,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
+            '@images': path.resolve(__dirname, 'src/assets/images'),
+            '@components': path.resolve(__dirname, 'src/components')
+        }
     },
     module: {
         rules: [

@@ -1,6 +1,6 @@
 $text-color: white;
-$image_url : url('assets/images/odaiba-night.jpg');
-$font_url : url('assets/fonts/roboto-regular.ttf');
+$image_url : url('@images/odaiba-night.jpg');
+$font_url : url('@fonts/roboto-regular.ttf');
 
 @font-face {
     font-family: 'Roboto';
