@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "jest --coverage",
-    "build": "webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack",
     "start": "webpack serve"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
