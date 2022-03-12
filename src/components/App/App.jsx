@@ -27,7 +27,7 @@ class App extends React.Component {
     render() {
         return (
             <div id="counter">
-                <h3>Counter : {this.state.count}</h3>
+                <h3>Counter: {this.state.count}</h3>
                 <div>
                     <button type='button' onClick={this.increment}>Increment</button>
                     <button type='button' onClick={this.decrement}>Decrement</button>
