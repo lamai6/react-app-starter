@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import './App.styles.scss';
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
