@@ -4,10 +4,11 @@
   "description": "Front End Development Certification (FreeCodeCamp) - Exam 1/5",
   "main": "src/app.js",
   "scripts": {
-    "test": "jest --coverage",
-    "build": "cross-env NODE_ENV=production webpack",
     "start": "webpack serve",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
+    "build": "cross-env NODE_ENV=production webpack",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "lint-debug": "npm run lint -- --debug"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^26.1.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -45,6 +47,7 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
     "node-sass": "^7.0.1",
+    "prettier": "2.5.1",
     "react-refresh": "^0.11.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

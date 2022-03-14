@@ -1,32 +1,32 @@
 $text-color: white;
-$image_url : url('@images/odaiba-night.jpg');
-$font_url : url('@fonts/roboto-regular.ttf');
+$image_url: url('@images/odaiba-night.jpg');
+$font_url: url('@fonts/roboto-regular.ttf');
 
 @font-face {
-    font-family: 'Roboto';
-    src: $font_url format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: $font_url format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-    background-image: $image_url;
-    font-family: 'Roboto', sans-serif;
+  background-image: $image_url;
+  font-family: 'Roboto', sans-serif;
 }
 
 #counter {
-    color: $text-color;
+  color: $text-color;
 
-    h3 {
-        text-align: center;
+  h3 {
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 0 1em;
     }
-
-    div {
-        display: flex;
-        justify-content: center;
-
-        button {
-            margin: 0 1em;
-        }
-    }
+  }
 }
