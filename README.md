@@ -844,6 +844,32 @@ To fix these issues ourselves:
   }
   ```
 
+### Conflict between git and ESLint about end of line on Windows
+
+When you commit a file, git converts automatically CRLF linebreaks into LF linebreaks, which is a good thing. It also converts LF linebreaks into CRLF linebreaks on Windows system when the file is checked out.
+
+However, the conversion into CRLF violates the [ESLint linebreak-style rule](https://eslint.org/docs/rules/linebreak-style), which leads to many errors when running `npm run lint`.
+
+To only prevent git from converting LF into CRLF (solution scoped to project):
+- create `.gitattributes` file
+
+  ```sh
+  touch .gitattributes
+  ```
+
+- add [this pattern](http://git-scm.com/docs/gitattributes#Documentation/gitattributes.txt-Settostringvaluelf) to this file
+
+  ```ini
+  * text=auto eol=lf
+  ```
+
+If you also want to prevent globally this conversion (on all your current and future projects):
+- run this command
+
+  ```sh
+  git config --global core.autocrlf false
+  ```
+
 ## Some resources that helped me
 
 - [Creating a React App… From Scratch.](https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658)
@@ -868,3 +894,4 @@ To fix these issues ourselves:
 - [Prevent missing React when using JSX](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md)
 - [Utiliser ESLint et Prettier pour un code de qualité](https://jeremiechazelle.dev/utiliser-eslint-et-prettier-sous-visual-studio-code-webstorm-phpstorm-pour-un-code-de-qualite)
 - [How to setup ESLint and Prettier for your React apps](https://thomaslombart.com/setup-eslint-prettier-react)
+- [How do I force git to use LF instead of CR+LF?](https://stackoverflow.com/a/42136008/16072226)
