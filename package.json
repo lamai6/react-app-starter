@@ -1,25 +1,30 @@
 {
-  "name": "random-quote-machine",
+  "name": "react-app-starter",
   "version": "1.0.0",
-  "description": "Front End Development Certification (FreeCodeCamp) - Exam 1/5",
+  "description": "A cutting-edge React boilerplate with best practices and best tools for React",
   "main": "src/app.js",
   "scripts": {
     "start": "webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "jest --coverage",
     "lint": "eslint .",
-    "lint-debug": "npm run lint -- --debug"
+    "lint-debug": "npm run lint -- --debug",
+    "format": "prettier --write"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lamai6/random-quote-machine.git"
+    "url": "git+https://github.com/lamai6/react-app-starter.git"
   },
   "author": "lamai6",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lamai6/random-quote-machine/issues"
+    "url": "https://github.com/lamai6/react-app-starter/issues"
   },
-  "homepage": "https://github.com/lamai6/random-quote-machine#readme",
+  "homepage": "https://github.com/lamai6/react-app-starter#readme",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
