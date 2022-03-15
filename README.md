@@ -271,6 +271,7 @@ If you are interested to see how I created this React boilerplate step by step, 
   ```
 
 - tell webpack to resolve .jsx files with resolve object in `webpack.config.js`
+
   ```js
   resolve: {
     extensions: [".js", ".jsx"];
@@ -289,23 +290,24 @@ If you are interested to see how I created this React boilerplate step by step, 
 
 - add babel loader configuration to the rule in `webpack.config.js`
 
-```js
-{
-    test: /\.(js|jsx)$/i,
-    exclude: /node_modules/,
-    use: [
-        {
-            loader: require.resolve('babel-loader'),
-            options: {
-                presets: ["@babel/preset-env", "@babel/preset-react"],
-                plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
-            }
-        }
-    ]
-}
-```
+  ```js
+  {
+      test: /\.(js|jsx)$/i,
+      exclude: /node_modules/,
+      use: [
+          {
+              loader: require.resolve('babel-loader'),
+              options: {
+                  presets: ["@babel/preset-env", "@babel/preset-react"],
+                  plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
+              }
+          }
+      ]
+  }
+  ```
 
 - tell webpack to resolve .jsx files with resolve object in `webpack.config.js`
+
   ```js
   resolve: {
     extensions: [".js", ".jsx"];
@@ -472,16 +474,16 @@ You can now update imports:
 
 - in `src/index.jsx`
 
-```js
-import App from "@components/App/App";
-```
+  ```js
+  import App from "@components/App/App";
+  ```
 
 - in `src/components/App/App.styles.scss`
 
-```scss
-$image_url: url("@images/odaiba-night.jpg");
-$font_url: url("@fonts/roboto-regular.ttf");
-```
+  ```scss
+  $image_url: url("@images/odaiba-night.jpg");
+  $font_url: url("@fonts/roboto-regular.ttf");
+  ```
 
 ### Webpack Dev Server & HMR
 
@@ -832,6 +834,7 @@ Moreover, installing Prettier plugin for VSCode is not enough, you have to make 
 To fix these issues ourselves:
 
 - open your `settings.json` file (location: `%APPDATA%\Code\User\settings.json`) and add:
+
   ```json
   {
     // ...
