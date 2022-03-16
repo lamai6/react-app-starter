@@ -9,12 +9,34 @@ If you are interested to see how I created this React boilerplate step by step, 
 ## Quick start
 
 1. Make sure that you have Node.js v12 and npm v5 or above installed
-2. Clone this repo using git clone :
+2. Clone this repo using git clone:
    - if you want to keep my commit history: `git clone git@github.com:lamai6/react-app-starter.git <YOUR_PROJECT_NAME>`
    - if you want to merge all my commits into a single commit: `git clone --depth=1 git@github.com:lamai6/react-app-starter.git <YOUR_PROJECT_NAME>`
-3. Move to the appropriate directory: cd <YOUR_PROJECT_NAME>
+3. Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`
 4. Run `npm install` in order to install dependencies
 5. At this point you can run `npm start` to see the React app at http://localhost:8080
+
+### *Optional*
+
+6. *Create your own remote repository*
+7. *Change the remote repository's URL of the project:* `git remote set-url origin <YOUR_PROJECT_REPO_URL>`
+8. *Update some `package.json` properties according to your needs*
+
+    ```json
+    {
+      "name": "<YOUR_PROJECT_NAME>",
+      "description": "<YOUR_PROJECT_DESCRIPTION>",
+      "repository": {
+        "url": "git+<YOUR_PROJECT_REPO_URL>"
+      },
+      "bugs": {
+        "url": "<YOUR_PROJECT_REPO_URL>/issues"
+      },
+      "homepage": "<YOUR_PROJECT_REPO_URL>#readme"
+    }
+    ```
+9. *Update `README.md` according to your needs*
+10. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
 
 ## Initialize git repository
 
