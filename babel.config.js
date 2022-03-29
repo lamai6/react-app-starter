@@ -11,6 +11,7 @@ module.exports = (api) => {
     ],
     plugins: [
       '@babel/plugin-transform-runtime',
+      'macros',
       !(api.env('production') || api.env('test')) && 'react-refresh/babel',
     ].filter(Boolean),
   };

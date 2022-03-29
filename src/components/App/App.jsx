@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import './App.styles.scss';
 
 class App extends Component {
@@ -38,12 +40,27 @@ class App extends Component {
         </h3>
         <div>
           <button type="button" onClick={this.increment}>
+            <FontAwesomeIcon
+              icon={solid('plus')}
+              size="sm"
+              style={{ marginRight: '0.4em' }}
+            />
             Increment
           </button>
           <button type="button" onClick={this.decrement}>
+            <FontAwesomeIcon
+              icon={solid('minus')}
+              size="sm"
+              style={{ marginRight: '0.4em' }}
+            />
             Decrement
           </button>
           <button type="button" onClick={this.reset}>
+            <FontAwesomeIcon
+              icon={solid('xmark')}
+              size="sm"
+              style={{ marginRight: '0.4em' }}
+            />
             Reset
           </button>
         </div>

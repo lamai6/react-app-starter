@@ -588,7 +588,69 @@ You can now update imports:
 
 > Furthermore, don't add the `output.clean` option in webpack configuration, it will prevent React components from hot reloading. For more information, take a look at the [issue](https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/595) I opened on the connector plugin repository.
 
-## Testing with Jest
+## Use FontAwesome icons
+
+There are a few ways to add FontAwesome to a project. The following is the best way as only the icons used will be included in the build.
+
+- add fontawesome svg core
+
+  ```sh
+  npm i --save @fortawesome/fontawesome-svg-core
+  ```
+
+- install icon styles you need
+
+  ```sh
+  npm i --save @fortawesome/free-solid-svg-icons
+  # npm i --save @fortawesome/free-brands-svg-icons
+  # npm i --save @fortawesome/free-regular-svg-icons
+  ```
+
+- install FontAwesome React component
+
+  ```sh
+  npm i --save @fortawesome/react-fontawesome@latest
+  ```
+
+- install Babel macros
+
+  ```sh
+  npm install --save-dev babel-plugin-macros
+  ```
+
+- add the plugin to Babel config file
+
+  ```js
+  plugins: [
+    '@babel/plugin-transform-runtime',
+    'macros',
+    !(api.env('production') || api.env('test')) && 'react-refresh/babel',
+  ].filter(Boolean),
+  ```
+
+- create babel-plugin-macros.config.js and add the fontawesome-svg-core settings
+
+  ```js
+  module.exports = {
+    "fontawesome-svg-core": {
+      license: "free",
+    },
+  };
+  ```
+
+- add icons to react component
+
+  ```jsx
+  // top of the file
+  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
+
+  // use icons
+  <FontAwesomeIcon icon={solid('plus')} size="sm" />
+  <FontAwesomeIcon icon={solid('minus')} size="sm" />
+  ```
+
+## Test your app with Jest
 
 - create Jest file configuration
 
@@ -707,7 +769,7 @@ You can now update imports:
   npm test
   ```
 
-## Linter (ESLint)
+## Lint your code with ESLint
 
 > We choose [Airbnb rules preset](https://github.com/airbnb/javascript) for our project
 
@@ -780,7 +842,7 @@ You can now update imports:
 
 > You can download the ESLint plugin of your favorite IDE [here](https://eslint.org/docs/user-guide/integrations#editors), so that you don't have to run the lint script every time.
 
-## Formatter (Prettier)
+## Format your code with Prettier
 
 ### No [integration with ESLint](https://prettier.io/docs/en/integrating-with-linters) wanted. Why ?
 
@@ -957,3 +1019,4 @@ We have to build the app and push the content of the build directory to a new br
 - [Utiliser ESLint et Prettier pour un code de qualité](https://jeremiechazelle.dev/utiliser-eslint-et-prettier-sous-visual-studio-code-webstorm-phpstorm-pour-un-code-de-qualite)
 - [How to setup ESLint and Prettier for your React apps](https://thomaslombart.com/setup-eslint-prettier-react)
 - [How do I force git to use LF instead of CR+LF?](https://stackoverflow.com/a/42136008/16072226)
+- [Set Up FontAwesome with React](https://fontawesome.com/docs/web/use-with/react)
