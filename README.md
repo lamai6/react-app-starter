@@ -898,6 +898,33 @@ If you also want to prevent globally this conversion (on all your current and fu
   git config --global core.autocrlf false
   ```
 
+## Deploy your app with GitHub Pages
+
+We have to build the app and push the content of the build directory to a new branch named `gh-pages`. GitHub will then host the content of this branch. We will automate this process using gh-pages module.
+
+- install gh-pages package
+  ```sh
+  npm install --save-dev gh-pages
+  ```
+
+- update `package.json` file
+  ```json
+  {
+    // ...
+    "homepage": "https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_PROJECT_NAME>",
+    "scripts": {
+      // ...
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d dist",
+    },
+  }
+  ```
+
+- build and deploy the app
+  ```sh
+  npm run deploy
+  ```
+
 ## Some resources that helped me
 
 - [Creating a React App… From Scratch.](https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658)
