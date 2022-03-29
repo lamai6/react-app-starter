@@ -56,6 +56,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React App',
       inject: false,
+      favicon: './src/assets/images/favicon.png',
       templateContent: ({ htmlWebpackPlugin }) => `
                 <html>
                     <head>

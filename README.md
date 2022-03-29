@@ -359,6 +359,8 @@ We need an HTML page that will be notably used by React to inject the app. To cr
 
 #### Preferred method
 
+- add a favicon in the `src/assets/images` folder
+
 - add `plugins` object in webpack configuration (`webpack.config.js`)
 
   ```js
@@ -369,6 +371,7 @@ We need an HTML page that will be notably used by React to inject the app. To cr
     new HtmlWebpackPlugin({
       title: "React App",
       inject: false,
+      favicon: './src/assets/images/favicon.png',
       templateContent: ({ htmlWebpackPlugin }) => `
               <html>
                   <head>
@@ -395,6 +398,8 @@ You can create a template in a separate HTML file in you need webpack to watch f
   touch src/template.html
   ```
 
+- add a favicon in the `src/assets/images` folder
+
 - insert HTML template (for webpack) in `src/template.html`
 
   ```html
@@ -415,6 +420,7 @@ You can create a template in a separate HTML file in you need webpack to watch f
   plugins: [
     new HtmlWebpackPlugin({
       title: "React App",
+      favicon: './src/assets/images/favicon.png',
       template: "src/template.html",
     }),
   ];
@@ -548,6 +554,7 @@ You can now update imports:
       new HtmlWebpackPlugin({
           title: 'React App',
           inject: false,
+          favicon: './src/assets/images/favicon.png',
           templateContent: ({htmlWebpackPlugin}) => `
               <html>
                   <head>
