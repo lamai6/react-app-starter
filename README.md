@@ -9,11 +9,15 @@ If you are interested to see how I created this React boilerplate step by step, 
 ## Quick start
 
 1. Make sure that you have Node.js v12 and npm v5 or above installed
+
 2. Clone this repo using git clone:
    - if you want to keep my commit history: `git clone git@github.com:lamai6/react-app-starter.git <YOUR_PROJECT_NAME>`
    - if you want to merge all my commits into a single commit: `git clone --depth=1 git@github.com:lamai6/react-app-starter.git <YOUR_PROJECT_NAME>`
+
 3. Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`
+
 4. Run `npm install` in order to install dependencies
+
 5. At this point you can run `npm start` to see the React app at http://localhost:8080
 
 ### *Optional*
@@ -36,7 +40,8 @@ If you are interested to see how I created this React boilerplate step by step, 
     }
     ```
 9. *Update `README.md` according to your needs*
-10. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
+10. *Run `npm install` in order to update `package.lock.json`*
+11. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
 
 ## Initialize git repository
 
@@ -264,16 +269,17 @@ If you are interested to see how I created this React boilerplate step by step, 
     api.cache.using(() => process.env.NODE_ENV);
     return {
       presets: [
-        "@babel/preset-env",
-        // For example, JSX transpiles <App /> to React.createElement(...), so we ask runtime to auto import React
+        '@babel/preset-env',
+        // JSX transpiles <App /> to React.createElement(...), so we ask runtime to auto import React
         [
-          "@babel/preset-react",
-          { development: !api.env("production"), runtime: "automatic" },
+          '@babel/preset-react',
+          { development: !api.env('production'), runtime: 'automatic' },
         ],
       ],
-      ...(!(api.env("production") || api.env("test")) && {
-        plugins: ["react-refresh/babel"],
-      }),
+      plugins: [
+        '@babel/plugin-transform-runtime', // for ES7 features like async/await
+        !(api.env('production') || api.env('test')) && 'react-refresh/babel',
+      ].filter(Boolean),
     };
   };
   ```
@@ -321,7 +327,7 @@ If you are interested to see how I created this React boilerplate step by step, 
               loader: require.resolve('babel-loader'),
               options: {
                   presets: ["@babel/preset-env", "@babel/preset-react"],
-                  plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
+                  plugins: ["@babel/plugin-transform-runtime", isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
               }
           }
       ]

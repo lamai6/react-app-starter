@@ -9,8 +9,9 @@ module.exports = (api) => {
         { development: !api.env('production'), runtime: 'automatic' },
       ],
     ],
-    ...(!(api.env('production') || api.env('test')) && {
-      plugins: ['react-refresh/babel'],
-    }),
+    plugins: [
+      '@babel/plugin-transform-runtime',
+      !(api.env('production') || api.env('test')) && 'react-refresh/babel',
+    ].filter(Boolean),
   };
 };
