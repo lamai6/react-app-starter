@@ -15,6 +15,9 @@ module.exports = {
         functions: 'only-multiline',
       },
     ],
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
+    'no-confusing-arrow': 'off',
   },
   settings: {
     react: {
