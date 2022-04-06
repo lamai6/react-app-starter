@@ -12,6 +12,7 @@ $font_url: url('@fonts/roboto-regular.ttf');
 body {
   background-image: $image_url;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 #counter {

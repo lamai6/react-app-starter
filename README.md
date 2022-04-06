@@ -23,8 +23,10 @@ If you are interested to see how I created this React boilerplate step by step, 
 ### *Optional*
 
 6. *Create your own remote repository*
+
 7. *Change the remote repository's URL of the project:* `git remote set-url origin <YOUR_PROJECT_REPO_URL>`
-8. *Update some `package.json` properties according to your needs*
+
+8. *Update these `package.json` properties*
 
     ```json
     {
@@ -39,9 +41,26 @@ If you are interested to see how I created this React boilerplate step by step, 
       "homepage": "<YOUR_PROJECT_REPO_URL>#readme"
     }
     ```
-9. *Update `README.md` according to your needs*
-10. *Run `npm install` in order to update `package.lock.json`*
-11. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
+
+9.  *Update page title in `webpack.config.js`*
+    ```js
+    // ...
+    plugins: [
+      // ...
+      new HtmlWebpackPlugin({
+        title: '<YOUR_PAGE_TITLE>',
+        // ...
+      }),
+    ].filter(Boolean),
+    ```
+
+10. *Update favicon*
+
+11. *Update `README.md` according to your needs*
+
+12. *Run `npm install` in order to update `package.lock.json`*
+
+13. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
 
 ## Initialize git repository
 
@@ -592,7 +611,7 @@ You can now update imports:
 
 There are a few ways to add FontAwesome to a project. The following is the best way as only the icons used will be included in the build.
 
-- add fontawesome svg core
+- add FontAwesome svg core
 
   ```sh
   npm i --save @fortawesome/fontawesome-svg-core
@@ -901,7 +920,17 @@ So, I added Prettier to the project, and configured it myself (`prettier.config.
   root = true
 
   [*]
+  charset = utf-8
   end_of_line = lf
+  indent_style = space
+  indent_size = 2
+  tab_width = 2
+  insert_final_newline = true
+  trim_trailing_whitespace = true
+
+  [*.{md,markdown}]
+  insert_final_newline = false
+  trim_trailing_whitespace = false
   ```
 
 - add format script in `package.json` to call Prettier
