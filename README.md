@@ -60,7 +60,7 @@ If you are interested to see how I created this React boilerplate step by step, 
 
 12. *Run `npm install` in order to update `package.lock.json`*
 
-13. *Commit and push your changes:* `git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
+13. *Commit and push your changes:* `git add . && git commit -m 'chore(settings): update project settings and readme' && git push -u origin main`
 
 ## Initialize git repository
 
