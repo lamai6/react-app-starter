@@ -58,17 +58,17 @@ module.exports = {
       inject: false,
       favicon: './src/assets/images/favicon.png',
       templateContent: ({ htmlWebpackPlugin }) => `
-                <html>
-                    <head>
-                        <title>${htmlWebpackPlugin.options.title}</title>
-                        ${htmlWebpackPlugin.tags.headTags}
-                    </head>
-                    <body>
-                        <div id='app'></div>
-                        ${htmlWebpackPlugin.tags.bodyTags}
-                    </body>
-                </html>
-            `,
+        <html>
+            <head>
+                <title>${htmlWebpackPlugin.options.title}</title>
+                ${htmlWebpackPlugin.tags.headTags}
+            </head>
+            <body>
+                <div id='app'></div>
+                ${htmlWebpackPlugin.tags.bodyTags}
+            </body>
+        </html>
+      `,
     }),
   ].filter(Boolean),
   devServer: {
